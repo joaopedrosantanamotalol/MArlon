@@ -1,32 +1,35 @@
+import {LinearGradient} from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import index from "../../styles/cadastro";
-export default function Index(){
+import { Text, TextInput, TouchableOpacity, View, ScrollView } from "react-native";
+import styles from "../../styles/cadastro"
+export default function Cadastro(){
+
     const router = useRouter();
+    
     return(
     <>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <LinearGradient style={styles.body} colors={['#59c64bff', '#2f466eff']} start={{x:-1, y:0}} end={{x:0,y:1}}>
 
-    <View style={index.body}>
+    <Text style={styles.titulo}>Bem Vindo</Text>
 
-    <Text style={index.titulo}>Bem Vindo</Text>
+    <Text style={styles.semi_titulo}>Faça seu Cadastro</Text>
 
-    <Text style={index.semi_titulo}>Faça seu Cadastro</Text>
+    <View style={styles.body_2}>
 
-    <View style={index.body_2}>
-
-    <TextInput placeholder="Nome" style={index.input}></TextInput>
-    <TextInput placeholder="Email" style={index.input}></TextInput>
-    <TextInput placeholder="Senha" style={index.input}></TextInput>
+    <TextInput placeholder="Nome" style={styles.input}></TextInput>
+    <TextInput placeholder="Email" style={styles.input}></TextInput>
+    <TextInput placeholder="Senha" style={styles.input}></TextInput>
 
     
-      <TouchableOpacity style={index.button} onPress={() => router.push("/")}>
-        <Text style={index.buttonText}>Clique aqui</Text>
+      <TouchableOpacity style={styles.button} onPress={() => router.push("/")}>
+        <Text style={styles.buttonText}>Clique aqui</Text>
       </TouchableOpacity>
 
     </View>
 
-    </View>
-
+    </LinearGradient>
+    </ScrollView>
     </>
     );
 }

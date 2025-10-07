@@ -3,14 +3,12 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   body: {
     flex: 1,
-    backgroundColor: "#000000", // corrige a capitalização
     alignItems: "center",
     justifyContent: "flex-start",
     paddingTop:100
   },
   body_2:{
    flex: 1,
-    backgroundColor: "#000000", // corrige a capitalização
     alignItems: "center",
     justifyContent: "flex-start",
     height: "auto",
@@ -30,7 +28,7 @@ export default StyleSheet.create({
   input:{
     backgroundColor: "#ede1e1ff",
     borderWidth: 2,
-    borderColor: "red",
+    borderColor: "#59c64bff",
     minWidth:250,
     width: "100%",
     height: 55,

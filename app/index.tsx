@@ -1,30 +1,31 @@
 import { useRouter } from "expo-router";
-import { Text, TextInput, TouchableOpacity, View } from "react-native";
-import index from "../styles/index";
+import {LinearGradient} from "expo-linear-gradient";
+import { Text, TextInput, TouchableOpacity, View,ScrollView } from "react-native";
+import styles from "../styles/index";
 export default function Index(){
     const router = useRouter();
     return(
     <>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+    <LinearGradient style={styles.body} colors={['#59c64bff', '#2f466eff']} start={{x:-1, y:0}} end={{x:0,y:1}}>
 
-    <View style={index.body}>
+    <Text style={styles.titulo}>Bem Vindo Marlon</Text>
 
-    <Text style={index.titulo}>Bem Vindo Marlon</Text>
+    <Text style={styles.semi_titulo}>Faça seu Login</Text>
 
-    <Text style={index.semi_titulo}>Faça seu Login</Text>
-
-    <View style={index.body_2}>
-    <TextInput placeholder="Email" style={index.input}></TextInput>
-    <TextInput placeholder="Senha" style={index.input}></TextInput>
+    <View style={styles.body_2}>
+    <TextInput placeholder="Email" style={styles.input}></TextInput>
+    <TextInput placeholder="Senha" style={styles.input}></TextInput>
 
     
-      <TouchableOpacity style={index.button} onPress={() => router.push("/cadastro/cadastro")}>
-        <Text style={index.buttonText}>Clique aqui</Text>
+      <TouchableOpacity style={styles.button} onPress={() => router.push("/home/home")}>
+        <Text style={styles.buttonText}>Logar</Text>
       </TouchableOpacity>
 
     </View>
 
-    </View>
-
+    </LinearGradient>
+    </ScrollView>
     </>
     );
 }

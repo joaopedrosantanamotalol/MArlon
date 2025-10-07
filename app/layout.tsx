@@ -5,6 +5,7 @@ export default function Layout() {
         <Stack>
             <Stack.Screen name="index"/>
             <Stack.Screen name="cadastro/cadastro"/>
+            <Stack.Screen name="home/home"/>
             </Stack>
     );
 }
