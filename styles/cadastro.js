@@ -1,56 +1,91 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-  body: {
+  container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start",
-    paddingTop:100
+    backgroundColor: '#3B3944',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
   },
-  body_2:{
-   flex: 1,
-    alignItems: "center",
-    justifyContent: "flex-start",
-    height: "auto",
-    marginTop:130
+  signupCard: {
+    backgroundColor: '#7BC4A8',
+    borderRadius: 25,
+    padding: 30,
+    width: '100%',
+    maxWidth: 380,
+    alignItems: 'center',
   },
-  titulo: {
-    fontSize: 30,
-    color: "#fff",
-    textAlign: "center", // centraliza o texto
+  signupTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginBottom: 25,
+    textAlign: 'center',
   },
-  semi_titulo:{
+  inputContainer: {
+    width: '100%',
+    marginBottom: 18,
+  },
+  inputLabel: {
     fontSize: 15,
-    color: "#fff",
-    textAlign: "center",
-    marginTop: 15
+    color: '#FFFFFF',
+    marginBottom: 8,
+    marginLeft: 5,
+    fontWeight: '500',
   },
-  input:{
-    backgroundColor: "#ede1e1ff",
-    borderWidth: 2,
-    borderColor: "#59c64bff",
-    minWidth:250,
-    width: "100%",
-    height: 55,
-    borderRadius: 30,
-    paddingLeft: 10,
-    marginBottom:40
+  input: {
+    backgroundColor: '#C8E6D9',
+    borderRadius: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    fontSize: 15,
+    color: '#333333',
+    width: '100%',
   },
- container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  signupButton: {
+    backgroundColor: '#2C5F4F',
+    borderRadius: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 50,
+    marginTop: 15,
+    marginBottom: 20,
   },
-  button: {
-    backgroundColor: "#1e3c72",
-    paddingVertical: 15,
-    paddingHorizontal: 30,
-    borderRadius: 10,
-    marginTop: 20
+  signupButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
-  buttonText: {
-    color: "#fff",
-    fontSize: 18,
-    fontWeight: "bold",
+  loginContainer: {
+    alignItems: 'center',
+    marginTop: 10,
   },
+  loginText: {
+    fontSize: 13,
+    color: '#FFFFFF',
+    marginBottom: 5,
+  },
+  loginLink: {
+    fontSize: 13,
+    color: '#FFFFFF',
+    textDecorationLine: 'underline',
+    fontWeight: '600',
+  },
+  backButton: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    width: 45,
+    height: 45,
+    borderRadius: 22.5,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+  }
 });

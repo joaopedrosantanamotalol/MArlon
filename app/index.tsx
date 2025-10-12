@@ -1,31 +1,54 @@
 import { useRouter } from "expo-router";
-import {LinearGradient} from "expo-linear-gradient";
-import { Text, TextInput, TouchableOpacity, View,ScrollView } from "react-native";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
 import styles from "../styles/index";
-export default function Index(){
-    const router = useRouter();
-    return(
-    <>
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-    <LinearGradient style={styles.body} colors={['#59c64bff', '#2f466eff']} start={{x:-1, y:0}} end={{x:0,y:1}}>
 
-    <Text style={styles.titulo}>Bem Vindo Marlon</Text>
+export default function Login() {
+  const router = useRouter();
 
-    <Text style={styles.semi_titulo}>Faça seu Login</Text>
-
-    <View style={styles.body_2}>
-    <TextInput placeholder="Email" style={styles.input}></TextInput>
-    <TextInput placeholder="Senha" style={styles.input}></TextInput>
-
-    
-      <TouchableOpacity style={styles.button} onPress={() => router.push("/home/home")}>
-        <Text style={styles.buttonText}>Logar</Text>
+  return (
+    <View style={styles.container}>
+      {/* Botão de voltar */}
+      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+        <Ionicons name="arrow-back" size={28} color="#4CAF50" />
       </TouchableOpacity>
 
-    </View>
+      {/* Card de Login */}
+      <View style={styles.loginCard}>
+        <Text style={styles.loginTitle}>Faça seu Login</Text>
 
-    </LinearGradient>
-    </ScrollView>
-    </>
-    );
+        <View style={styles.inputContainer}>
+          <Text style={styles.inputLabel}>Email</Text>
+          <TextInput 
+            style={styles.input}
+            placeholder=""
+            placeholderTextColor="#999"
+            keyboardType="email-address"
+            autoCapitalize="none"
+          />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <Text style={styles.inputLabel}>Senha</Text>
+          <TextInput 
+            style={styles.input}
+            placeholder=""
+            placeholderTextColor="#999"
+            secureTextEntry
+          />
+        </View>
+
+        <TouchableOpacity style={styles.loginButton} onPress={() => router.push("/home/home")} >
+          <Text style={styles.loginButtonText}>Entrar</Text>
+        </TouchableOpacity>
+
+        <View style={styles.signupContainer}>
+          <Text style={styles.signupText}>Não tem uma conta ainda?</Text>
+          <TouchableOpacity onPress={() => router.push("/cadastro/cadastro")}>
+            <Text style={styles.signupLink}>Crie uma conta conosco</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
+  );
 }
