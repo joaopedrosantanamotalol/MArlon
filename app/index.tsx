@@ -8,6 +8,7 @@ export default function Login() {
 
   return (
     <View style={styles.container}>
+      /* Card de Login */
       {/* Botão de voltar */}
       <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
         <Ionicons name="arrow-back" size={28} color="#4CAF50" />
