@@ -1,0 +1,19 @@
+{
+  "cli": {
+    "version": ">= 3.18.0"
+  },
+  "build": {
+    "preview": {
+      "developmentClient": false,
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true,
+      "distribution": "store"
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
