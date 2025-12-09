@@ -1,8 +1,36 @@
 import { router, useRouter } from "expo-router";
-import { ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { useEffect, useState } from "react";
+import { ImageBackground, ScrollView, Text, TouchableOpacity, View, ActivityIndicator } from "react-native";
 import styles from "../../styles/home";
+import { authService } from "../../services/authService";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+  const routerInstance = useRouter();
+
+  useEffect(() => {
+    // Verificar se o usuário está autenticado
+    const unsubscribe = authService.onAuthChange((user) => {
+      if (!user) {
+        // Se não estiver autenticado, redirecionar para login
+        routerInstance.replace("/");
+      } else {
+        setLoading(false);
+      }
+    });
+
+    // Cleanup
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color="#4CAF50" />
+      </View>
+    );
+  }
+
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       {/* Header com imagem de fundo */}
@@ -149,8 +177,8 @@ export default function Home() {
         </Text>
         
         <View style={styles.ctaButton}>
-            <TouchableOpacity onPress={() => router.push("/cadastro/cadastro")}>
-          <Text style={styles.ctaButtonText}>Utilizar o VestMath</Text>
+          <TouchableOpacity onPress={() => router.push("/cadastro/cadastro")}>
+            <Text style={styles.ctaButtonText}>Utilizar o VestMath</Text>
           </TouchableOpacity>
         </View>
       </View>
