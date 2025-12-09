@@ -157,6 +157,14 @@ export default function Resultado() {
             </View>
 
             <TouchableOpacity 
+              style={styles.historicoButton}
+              onPress={() => router.push("/historico/historico")}
+            >
+              <Ionicons name="time-outline" size={20} color="#FFFFFF" style={styles.buttonIcon} />
+              <Text style={styles.planButtonText}>Ver histórico de cálculos</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
               style={styles.planButton}
               onPress={() => router.push("/home/home")}
             >
@@ -429,11 +437,24 @@ const styles = StyleSheet.create({
     color: '#2C3E50',
     lineHeight: 18,
   },
+  historicoButton: {
+    backgroundColor: '#9B59B6',
+    borderRadius: 25,
+    padding: 15,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  buttonIcon: {
+    marginRight: 8,
+  },
   planButton: {
     backgroundColor: '#16A085',
     borderRadius: 25,
     padding: 15,
     alignItems: 'center',
+    marginBottom: 10,
   },
   planButton2: {
     backgroundColor: '#3498DB',
