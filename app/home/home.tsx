@@ -177,7 +177,7 @@ export default function Home() {
         </Text>
         
         <View style={styles.ctaButton}>
-          <TouchableOpacity onPress={() => router.push("/cadastro/cadastro")}>
+          <TouchableOpacity onPress={() => router.push("/calculox/calculo")}>
             <Text style={styles.ctaButtonText}>Utilizar o VestMath</Text>
           </TouchableOpacity>
         </View>
