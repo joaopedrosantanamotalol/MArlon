@@ -162,6 +162,35 @@ export default function Resultado() {
             >
               <Text style={styles.planButtonText}>Voltar para página inicial</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.planButton2}
+              onPress={() => {
+                console.log("Navegando para perfil com params:", {
+                  resiliencia: params.resiliencia,
+                  inteligencia: params.inteligencia,
+                  curso: params.curso,
+                  instituicao: params.instituicao,
+                  valorX: valorX,
+                  valorY: valorY,
+                  diferenca: diferenca
+                });
+                router.push({
+                  pathname: "/perfil/perfil",
+                  params: {
+                    resiliencia: params.resiliencia,
+                    inteligencia: params.inteligencia,
+                    curso: params.curso,
+                    instituicao: params.instituicao,
+                    valorX: valorX.toString(),
+                    valorY: valorY.toString(),
+                    diferenca: diferenca.toString()
+                  }
+                });
+              }}
+            >
+              <Text style={styles.planButtonText}>Ver seu perfil</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -405,6 +434,13 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     padding: 15,
     alignItems: 'center',
+  },
+  planButton2: {
+    backgroundColor: '#3498DB',
+    borderRadius: 25,
+    padding: 15,
+    alignItems: 'center',
+    marginTop: 15,
   },
   planButtonText: {
     color: '#FFFFFF',

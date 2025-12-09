@@ -8,6 +8,8 @@ export default function Layout() {
             <Stack.Screen name="home/home"/>
             <Stack.Screen name="calculox/calculo"/>
             <Stack.Screen name="calculoy/calculo"/>
+            <Stack.Screen name="resultado/resultado"/>
+            <Stack.Screen name="perfil/perfil"/>
             </Stack>
     );
 }
